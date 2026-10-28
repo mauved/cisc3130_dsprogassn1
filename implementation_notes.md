@@ -20,3 +20,7 @@ The tl;dr is: just use arraylist.
 ## Simple input-based UI
 It'd be cool to use a UI framework like [Tambo](https://tamboui.dev), but let's keep it easy.
 Just use Scanner and IO.
+
+## Interfaces will go in <_>ADT.java
+The textbook calls stacks and queues abstract data types.
+The interfaces define the methods associated with the abstract data types.
