@@ -6,7 +6,7 @@ package net.qwfp.sofia.cisc3130.assn1;
  * https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/Queue.html
  * @param <E>
  */
-public interface Queue<E> {
+public interface QueueADT<E> {
     /**
      * Inserts the specified element into the queue.
      * @param e
