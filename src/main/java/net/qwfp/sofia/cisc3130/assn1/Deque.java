@@ -1,71 +1,59 @@
 package net.qwfp.sofia.cisc3130.assn1;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
- * Deque class based on ArrayList
- * Default behavior is LIFO, but FIFO behavior is possible
+ * Deque class based on ArrayList </br>
+ * Acts like a FIFO Queue with default methods,
+ * but supports LIFO methods
  * @param <E>
  */
-public class Deque<E> implements DequeADT<E> {
-    /**
-     *
-     */
-    private ArrayList<E> deque;
-
+public class Deque<E> extends ArrayList<E> implements DequeADT<E> {
     /**
      * Default constructor
      * Initializes empty deque
      */
-    public Deque() {
-        deque = new ArrayList<>();
-    }
+    public Deque() {}
 
     /**
-     * Adds item to front of deque
-     * @param item
-     */
-    public void addFirst(E item) {
-        deque.addFirst(item);
-    }
-
-    /**
-     * Inserts item to the back of the queue
-     * @param item
-     */
-    public void addLast(E item) {
-        deque.addLast(item);
-    }
-
-    /**
-     * Inserts item to the back of the queue
-     * @param item
-     */
-    public void add(E item) {
-        this.addLast(item);
-    }
-
-    /**
-     * Removes and returns first item in deque
-     * @return
-     */
-    public E removeFirst() {
-        return deque.removeFirst();
-    }
-
-    /**
-     * Removes and returns last item in deque
-     * @return
-     */
-    public E removeLast() {
-        return deque.removeLast();
-    }
-
-    /**
-     * Removes and returns first item in deque
-     * @return
+     * Removes and returns the first item in the deque
+     * @return the first item in the deque
      */
     public E remove() {
-        return this.removeFirst();
+        // Don't return anything if the deque is empty
+        if (this.isEmpty()) {
+            return null;
+        }
+        return super.removeFirst();
+    }
+
+    /**
+     * Implements iterator
+     * @return new DequeIterator
+     */
+    public Iterator<E> iterator() {
+        return new DequeIterator();
+    }
+
+    /**
+     * Implements Iterator interface for Deque class as a LIFO queue
+     */
+    private class DequeIterator implements Iterator<E> {
+        /**
+         *
+         * @return true if the Deque is not empty, false if it is empty
+         */
+        public boolean hasNext() {
+            return !Deque.this.isEmpty();
+        }
+
+        /**
+         *
+         * @return the last
+         */
+        public E next() {
+            return Deque.this.remove();
+        }
     }
 }

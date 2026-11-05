@@ -7,62 +7,59 @@ import java.util.Iterator;
  * Queue implements a FIFO queue
  * @param <E>
  */
-public class Queue<E> implements QueueADT<E>, Iterable<E> {
-    private ArrayList<E> queue;
-
-    public Queue() {
-        queue = new ArrayList<>();
-    }
-
+public class Queue<E> extends ArrayList<E> implements QueueADT<E> {
     /**
-     * Appends item to the end of the underlying ArrayList
-     * @param item
+     * Default constructor
      */
-    public void add(E item) {
-        queue.add(item);
-    }
+    public Queue() {}
 
     /**
      * Removes and returns the oldest item in the ArrayList
-     * @return
+     * @return the first item in the queue
      */
     public E remove() {
-        return queue.removeFirst();
-    }
-
-    public boolean empty() {
-        return !queue.isEmpty();
+        // Don't return anything if the queue is empty
+        if (this.isEmpty()) {
+            return null;
+        }
+        return super.removeFirst();
     }
 
     /**
-     *
-     * @return
+     * Checks whether the queue has any items </br>
+     * The java.util.Queue defines this method, so this is implemented for parity
+     * @return true if the queue empty, otherwise return false
+     */
+    public boolean empty() {
+        return super.isEmpty();
+    }
+
+    /**
+     * Override the ArrayList iterator with queue behavior
+     * @return a QueueIterator
      */
     public Iterator<E> iterator() {
-        return new QueueIterator<E>(this);
+        return new QueueIterator();
     }
 
     /**
-     *
-     * @param <E>
+     * Define Iterator behavior for the Queue class
      */
-    private class QueueIterator<E> implements Iterator<E> {
-        private Queue<E> queue;
-
-        public QueueIterator(Queue<E> queue) {
-            this.queue = queue;
-        }
-
+    private class QueueIterator implements Iterator<E> {
+        /**
+         *
+         * @return true if the queue is not empty, otherwise return false
+         */
         public boolean hasNext() {
-            return queue.empty();
+            return !Queue.this.isEmpty();
         }
 
+        /**
+         * Removes and returns the next item in the queue
+         * @return the next item in the queue
+         */
         public E next() {
-            return queue.remove();
-        }
-
-        public void remove() {
-            queue.remove();
+            return Queue.this.remove();
         }
     }
 }
