@@ -15,6 +15,14 @@ public class Stack<E> extends ArrayList<E> implements StackADT<E> {
     public Stack() {}
 
     /**
+     * Constructor for copying
+     * @param original
+     */
+    public Stack(Stack<E> original) {
+        super(original);
+    }
+
+    /**
      * Checks whether the stack has any items
      * @return true if the stack is empty, otherwise return false
      */

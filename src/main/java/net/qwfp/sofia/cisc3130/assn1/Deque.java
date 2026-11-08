@@ -17,6 +17,22 @@ public class Deque<E> extends ArrayList<E> implements DequeADT<E> {
     public Deque() {}
 
     /**
+     * Constructor for copying
+     * @param original
+     */
+    public Deque(Deque<E> original) {
+        super(original);
+    }
+
+    /**
+     * Constructor for copying from an ArrayList
+     * @param original
+     */
+    public Deque(ArrayList<E> original) {
+        super(original);
+    }
+
+    /**
      * Removes and returns the first item in the deque
      * @return the first item in the deque
      */

@@ -14,6 +14,14 @@ public class Queue<E> extends ArrayList<E> implements QueueADT<E> {
     public Queue() {}
 
     /**
+     * Constructor for copying
+     * @param original
+     */
+    public Queue(Queue<E> original) {
+        super(original);
+    }
+
+    /**
      * Removes and returns the oldest item in the ArrayList
      * @return the first item in the queue
      */
