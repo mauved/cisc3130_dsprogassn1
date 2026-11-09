@@ -174,7 +174,9 @@ Application follows a Read-Evaluate-Print-Loop (REPL) pattern</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>(package private) <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Integer.html" title="class in java.lang" class="external-link">Integer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addItem(java.lang.String,java.util.ArrayList)" class="member-name-link">addItem</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;collectionType,
  <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/ArrayList.html" title="class in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;&nbsp;newItemCollection)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Creates a new data structure containing items specified by user</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/ArrayList.html" title="class in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#itemStringToArrayList(java.lang.String)" class="member-name-link">itemStringToArrayList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;itemString)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -202,7 +204,9 @@ Application follows a Read-Evaluate-Print-Loop (REPL) pattern</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="User.mainCommand.html" title="enum class in net.qwfp.sofia.cisc3130.assn1">User.mainCommand</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readCommand(java.lang.String)" class="member-name-link">readCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;userInput)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Reads in unsanitized user input and returns the user's expected command</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#REPL()" class="member-name-link">REPL</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -285,11 +289,12 @@ A standard form for an interactive interpreter</div>
 <h3>readCommand</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="User.mainCommand.html" title="enum class in net.qwfp.sofia.cisc3130.assn1">User.mainCommand</a></span>&nbsp;<span class="element-name">readCommand</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;userInput)</span></div>
+<div class="block">Reads in unsanitized user input and returns the user's expected command</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>userInput</code> - this is expected to be a string provided by a user containing a command and data for the command</dd>
 <dt>Returns:</dt>
-<dd>the command the user intdends</dd>
+<dd>the command the user intends</dd>
 </dl>
 </div>
 </section>
@@ -300,11 +305,13 @@ A standard form for an interactive interpreter</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Integer.html" title="class in java.lang" class="external-link">Integer</a></span>&nbsp;<span class="element-name">addItem</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;collectionType,
  <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/ArrayList.html" title="class in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;&nbsp;newItemCollection)</span></div>
+<div class="block">Creates a new data structure containing items specified by user</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>collectionType</code> - The data structure the user intends</dd>
-<dd><code>newItemCollection</code> - </dd>
+<dd><code>collectionType</code> - The data structure the user intends to create</dd>
+<dd><code>newItemCollection</code> - the collection in which the new item should be held</dd>
 <dt>Returns:</dt>
+<dd>the last index of the collection</dd>
 </dl>
 </div>
 </section>
@@ -317,7 +324,9 @@ A standard form for an interactive interpreter</div>
 <div class="block">Process a user-inputted string defining a list of items into an ArrayList</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>itemString</code> - </dd>
+<dd><code>itemString</code> - a comma-separated list of items a user would like in a collection</dd>
+<dt>Returns:</dt>
+<dd>the user-inputted strings as an ArrayList</dd>
 </dl>
 </div>
 </section>

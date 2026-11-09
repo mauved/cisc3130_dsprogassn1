@@ -15,7 +15,7 @@ public class Queue<E> extends ArrayList<E> implements QueueADT<E> {
 
     /**
      * Constructor for copying
-     * @param original
+     * @param original the queue being copied
      */
     public Queue(Queue<E> original) {
         super(original);

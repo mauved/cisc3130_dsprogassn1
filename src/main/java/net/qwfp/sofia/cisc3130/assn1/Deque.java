@@ -18,7 +18,7 @@ public class Deque<E> extends ArrayList<E> implements DequeADT<E> {
 
     /**
      * Constructor for copying
-     * @param original
+     * @param original the double-ended queue being copied
      */
     public Deque(Deque<E> original) {
         super(original);

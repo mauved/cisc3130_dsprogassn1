@@ -16,7 +16,7 @@ public class Stack<E> extends ArrayList<E> implements StackADT<E> {
 
     /**
      * Constructor for copying
-     * @param original
+     * @param original the stack being copied
      */
     public Stack(Stack<E> original) {
         super(original);

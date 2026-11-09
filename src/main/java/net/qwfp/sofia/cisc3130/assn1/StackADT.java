@@ -5,6 +5,7 @@ package net.qwfp.sofia.cisc3130.assn1;
  * Stack specifies LIFO behavior.
  * Based on the methods provided at
  * <a href=https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/Stack.html>java.util.Stack</a>.
+ * @param <E> the datatype to be stored in the stack
  */
 public interface StackADT<E> {
     /**
@@ -21,7 +22,7 @@ public interface StackADT<E> {
 
     /**
      * Retrieves and removes item from stack
-     * @return
+     * @return the item at the top of the stack
      */
     E pop();
 }

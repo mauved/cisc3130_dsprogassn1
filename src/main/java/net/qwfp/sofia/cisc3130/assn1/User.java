@@ -137,9 +137,9 @@ public class User {
     }
 
     /**
-     *
+     * Reads in unsanitized user input and returns the user's expected command
      * @param userInput this is expected to be a string provided by a user containing a command and data for the command
-     * @return the command the user intdends
+     * @return the command the user intends
      */
     private mainCommand readCommand(String userInput) {
         if (userInput.contains(mainCommand.EXIT.toString())) {
@@ -161,10 +161,10 @@ public class User {
     }
 
     /**
-     *
-     * @param collectionType The data structure the user intends
-     * @param newItemCollection
-     * @return
+     * Creates a new data structure containing items specified by user
+     * @param collectionType The data structure the user intends to create
+     * @param newItemCollection the collection in which the new item should be held
+     * @return the last index of the collection
      */
     Integer addItem(String collectionType, ArrayList<String> newItemCollection) {
         // Our implemented classes extend ArrayList,
@@ -187,7 +187,8 @@ public class User {
 
     /**
      * Process a user-inputted string defining a list of items into an ArrayList
-     * @param itemString
+     * @param itemString a comma-separated list of items a user would like in a collection
+     * @return the user-inputted strings as an ArrayList
      */
     static ArrayList<String> itemStringToArrayList(String itemString) {
         ArrayList<String> itemArrayList = new ArrayList<>();

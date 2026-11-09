@@ -3,6 +3,7 @@ package net.qwfp.sofia.cisc3130.assn1;
 /**
  * Interface specification for a double-ended queue <br>
  * Based on <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/Deque.html">.java.util.Deque</a>
+ * @param <E> the datatype to be stored in the double-ended queue
  */
 public interface DequeADT<E> extends QueueADT<E> {
     /**
