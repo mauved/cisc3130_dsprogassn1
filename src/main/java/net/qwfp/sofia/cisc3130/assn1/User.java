@@ -191,10 +191,7 @@ public class User {
      * @return the user-inputted strings as an ArrayList
      */
     static ArrayList<String> itemStringToArrayList(String itemString) {
-        ArrayList<String> itemArrayList = new ArrayList<>();
-        itemArrayList.addAll(Arrays.asList(itemString.trim().split(",")));
-
-        return itemArrayList;
+        return new ArrayList<>(Arrays.asList(itemString.trim().split(",")));
     }
 
     /**
