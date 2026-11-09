@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Deque class based on ArrayList </br>
+ * Deque class based on ArrayList <br>
  * Acts like a FIFO Queue with default methods,
  * but supports LIFO methods
  * @param <E>

@@ -34,7 +34,7 @@ public class Queue<E> extends ArrayList<E> implements QueueADT<E> {
     }
 
     /**
-     * Checks whether the queue has any items </br>
+     * Checks whether the queue has any items <br>
      * The java.util.Queue defines this method, so this is implemented for parity
      * @return true if the queue empty, otherwise return false
      */

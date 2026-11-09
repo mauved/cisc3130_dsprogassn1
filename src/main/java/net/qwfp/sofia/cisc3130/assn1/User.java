@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Defines the user interface </br>
+ * Defines the user interface <br>
  * Application follows a Read-Evaluate-Print-Loop (REPL) pattern
  */
 public class User {
