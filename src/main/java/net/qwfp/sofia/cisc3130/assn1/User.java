@@ -217,7 +217,7 @@ public class User {
         String collectionItemFormatString = "Item: %s %d, Size: %d";
         ArrayList<String> collectionRepresentation = new ArrayList<>();
 
-        for (Integer index = 0; index < collection.size(); index++) {
+        for (int index = 0; index < collection.size(); index++) {
             collectionRepresentation.add(
                     String.format(
                             collectionItemFormatString,
@@ -237,7 +237,7 @@ public class User {
      * @return a validated index if a valid integer is inputted, otherwise null
      */
     private Integer parseIndex(String potentialIndex) {
-        Integer returnIndex;
+        int returnIndex;
         // Validate that the inputted index represents an integer
         // Return null
         try {
