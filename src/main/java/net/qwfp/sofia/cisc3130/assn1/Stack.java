@@ -6,7 +6,7 @@ import java.util.Iterator;
 /**
  * Stack implements a LIFO stack.
  * The bottom of the stack is the beginning of the list
- * @param <E>
+ * @param <E> datatype to be stored within collection
  */
 public class Stack<E> extends ArrayList<E> implements StackADT<E> {
     /**

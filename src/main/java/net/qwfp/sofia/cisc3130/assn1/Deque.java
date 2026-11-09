@@ -7,7 +7,7 @@ import java.util.Iterator;
  * Deque class based on ArrayList <br>
  * Acts like a FIFO Queue with default methods,
  * but supports LIFO methods
- * @param <E>
+ * @param <E> input type for the double-ended queue
  */
 public class Deque<E> extends ArrayList<E> implements DequeADT<E> {
     /**

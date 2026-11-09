@@ -141,7 +141,9 @@ Application follows a Read-Evaluate-Print-Loop (REPL) pattern</div>
 </div>
 <div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#helpString" class="member-name-link">helpString</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Shows how to use the program</div>
+</div>
 </div>
 </section>
 </li>
@@ -190,10 +192,14 @@ Application follows a Read-Evaluate-Print-Loop (REPL) pattern</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Integer.html" title="class in java.lang" class="external-link">Integer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseIndex(java.lang.String)" class="member-name-link">parseIndex</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;potentialIndex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Validates that the user has inputted a valid index</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#printItem(java.util.ArrayList)" class="member-name-link">printItem</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/ArrayList.html" title="class in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;&nbsp;collectionItem)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Prints the contents of a collection</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="User.mainCommand.html" title="enum class in net.qwfp.sofia.cisc3130.assn1">User.mainCommand</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readCommand(java.lang.String)" class="member-name-link">readCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;userInput)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -236,6 +242,7 @@ Since this program accepts user input, only Strings will be accepted.</div>
 <h3>helpString</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">helpString</span></div>
+<div class="block">Shows how to use the program</div>
 </div>
 </section>
 </li>
@@ -324,7 +331,7 @@ A standard form for an interactive interpreter</div>
 Meant to be used with listCollection()</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>items</code> - </dd>
+<dd><code>items</code> - items to be printed to stdout</dd>
 </dl>
 </div>
 </section>
@@ -347,6 +354,7 @@ Meant to be used with listCollection()</div>
 <h3>parseIndex</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Integer.html" title="class in java.lang" class="external-link">Integer</a></span>&nbsp;<span class="element-name">parseIndex</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;potentialIndex)</span></div>
+<div class="block">Validates that the user has inputted a valid index</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>potentialIndex</code> - a string containing a valid index to an item in the collection</dd>
@@ -361,6 +369,7 @@ Meant to be used with listCollection()</div>
 <h3>printItem</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">printItem</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/ArrayList.html" title="class in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;&nbsp;collectionItem)</span></div>
+<div class="block">Prints the contents of a collection</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>collectionItem</code> - a Stack, Queue or Deque (or anything that is ArrayList shaped)</dd>

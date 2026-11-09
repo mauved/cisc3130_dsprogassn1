@@ -6,19 +6,20 @@ package net.qwfp.sofia.cisc3130.assn1;
  * Based on the <a href=https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/Queue.html>
  *     java.util.Queue class specification
  *     </a>
- * @param <E>
+ * @param <E> input type for the FIFO queue
  */
 public interface QueueADT<E> {
     /**
      * Inserts the specified element into the queue. <br>
      * This needed to be set to a boolean rather than a void due the ArrayList defining add as a boolean
-     * @param e
+     * @param e element to be added to queue
+     * @return true if item is successfully added to queue
      */
     boolean add(E e);
 
     /**
      * Retrieves and removes the head of this queue.
-     * @return
+     * @return item removed from queue
      */
     E remove();
 }

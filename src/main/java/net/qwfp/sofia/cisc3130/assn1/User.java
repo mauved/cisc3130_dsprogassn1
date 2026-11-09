@@ -16,7 +16,7 @@ public class User {
     private ArrayList<ArrayList<String>> collection;
 
     /**
-     *
+     * Shows how to use the program
      */
     private final static String helpString =
         "Available commands:" +System.lineSeparator()+
@@ -98,12 +98,25 @@ public class User {
      * Enumerates available commands
      */
     private enum mainCommand {
+        /** Add data to an existing object */
         ADD,
+
+        /** Add data to an existing object */
         ADDDATA,
+
+        /** Remove an object */
         REMOVE,
-        LIST,
+
+        /** List existing objects */
+        LIST,       //
+
+        /** Print the contents of an object */
         PRINT,
+
+        /** Exit program */
         EXIT,
+
+        /** TODO: Print help text */
         HELP;
 
         /**
@@ -186,7 +199,7 @@ public class User {
     /**
      * Prints a given ArrayList of strings.
      * Meant to be used with listCollection()
-     * @param items
+     * @param items items to be printed to stdout
      */
     private void listItems(ArrayList<String> items) {
         for (String item : items) {
@@ -221,7 +234,7 @@ public class User {
     }
 
     /**
-     *
+     * Validates that the user has inputted a valid index
      * @param potentialIndex a string containing a valid index to an item in the collection
      * @return a validated index if a valid integer is inputted, otherwise null
      */
@@ -244,7 +257,7 @@ public class User {
     }
 
     /**
-     *
+     * Prints the contents of a collection
      * @param collectionItem a Stack, Queue or Deque (or anything that is ArrayList shaped)
      * @return the contents of a stack, queue, or deque as returned by its iterator separated by line separators
      */

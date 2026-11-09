@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 /**
  * Queue implements a FIFO queue
- * @param <E>
+ * @param <E> input type for the Queue
  */
 public class Queue<E> extends ArrayList<E> implements QueueADT<E> {
     /**
