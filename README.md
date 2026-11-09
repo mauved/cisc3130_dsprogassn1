@@ -8,7 +8,7 @@ Create a stack, queue, and deque data structure by extending either Vector or Ar
 Implement an interactive program with a main menu for which data structures to use.
 Implement submenus for reading, adding, removing, and printing elements.
 
-All classes, methods, andn fields should be accompanied by Javadoc comments.
+All classes, methods, and fields should be accompanied by Javadoc comments.
 The comments should outline design decisions and functionality.
 
 ## Requirements
@@ -16,7 +16,8 @@ The comments should outline design decisions and functionality.
 - Stack
 - Queue
 - Deque
-- main user class
+- Main class 
+- User class
 
 ### Functionality implemented
 - Interactive user portion
@@ -24,5 +25,7 @@ The comments should outline design decisions and functionality.
     - Create object
     - Delete object
     - List objects
-    - Print object
+    - Print object contents
+    - Add elements to objects
+    - Remove elements from objects
 - Each class should have an iterator
