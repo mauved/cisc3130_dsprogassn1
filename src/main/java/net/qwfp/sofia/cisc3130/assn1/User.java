@@ -23,6 +23,7 @@ public class User {
         "- add <stack|queue|deque> <comma-separated collection of items>:" +System.lineSeparator()+
         "- list" +System.lineSeparator()+
         "- remove <item index>" +System.lineSeparator()+
+        "- addData <item index> <comma-separated collection of items>:" +System.lineSeparator()+
         "- print <item index>" +System.lineSeparator()+
         "- exit" + System.lineSeparator();
 
@@ -72,6 +73,14 @@ public class User {
                         collection.remove(indexToRemove.intValue()); // this one was a pain to debug
                     }
                 }
+                case mainCommand.ADDDATA -> {
+                    if (commandParts.length < 3) {
+                        break;
+                    }
+                    Integer indexToAddTo = parseIndex(commandParts[1]);
+                    ArrayList<String> inputElements = itemStringToArrayList(commandParts[2]);
+                    addElementToItem(indexToAddTo, inputElements);
+                }
                 case mainCommand.LIST -> listItems(listCollection());
                 case mainCommand.PRINT -> {
                     if (commandParts.length < 2) {
@@ -107,6 +116,9 @@ public class User {
         /** Remove an object */
         REMOVE,
 
+        /** Remove data from an existing object */
+        REMOVEDATA,
+
         /** List existing objects */
         LIST,       //
 
@@ -126,8 +138,9 @@ public class User {
         public String toString() {
             return switch (this) {
                 case ADD -> "add";
-                case ADDDATA -> "adddata";
+                case ADDDATA -> "addData";
                 case REMOVE -> "remove";
+                case REMOVEDATA -> "removeData";
                 case LIST -> "list";
                 case PRINT -> "print";
                 case EXIT -> "exit";
@@ -144,6 +157,9 @@ public class User {
     private mainCommand readCommand(String userInput) {
         if (userInput.contains(mainCommand.EXIT.toString())) {
             return mainCommand.EXIT;
+        }
+        else if (userInput.contains(mainCommand.ADDDATA.toString())) {
+            return mainCommand.ADDDATA;
         }
         else if (userInput.contains(mainCommand.ADD.toString())) {
             return mainCommand.ADD;
@@ -276,5 +292,16 @@ public class User {
             generatedOutput.append(elementOfItem).append(System.lineSeparator());
         }
         return generatedOutput.toString();
+    }
+
+    /**
+     * Adds a user-submitted list of elements to a collection
+     * @param itemIndex the index of the item that will have data added
+     * @param inputElements the data to be added to
+     */
+    private void addElementToItem(int itemIndex, ArrayList<String> inputElements) {
+        for (String inputElement : inputElements) {
+            collection.get(itemIndex).add(inputElement);
+        }
     }
 }
