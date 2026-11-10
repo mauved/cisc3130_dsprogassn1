@@ -78,6 +78,9 @@ public class User {
                         break;
                     }
                     Integer indexToAddTo = parseInteger(commandParts[1]);
+                    if (indexToAddTo == null) {
+                        break;
+                    }
                     ArrayList<String> inputElements = itemStringToArrayList(commandParts[2]);
                     addElementToItem(indexToAddTo, inputElements);
                 }
@@ -87,7 +90,7 @@ public class User {
                         break;
                     }
                     Integer indexToPrint = parseInteger(commandParts[1]);
-                    if (indexToPrint != null) {
+                    if (indexToPrint != null && !collection.get(indexToPrint).isEmpty()) {
                         output = printItem(collection.get(indexToPrint));
                     }
                 }
@@ -263,7 +266,7 @@ public class User {
         }
 
         // return null for invalid index numbers
-        if (returnInteger < 0 || returnInteger > collection.size()) {
+        if (returnInteger < 0 || returnInteger >= collection.size()) {
             return null;
         }
 
