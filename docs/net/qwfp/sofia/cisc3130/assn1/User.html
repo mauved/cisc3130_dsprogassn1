@@ -84,8 +84,10 @@ initTheme();
 <li><a href="#listItems(java.util.ArrayList)" tabindex="0">listItems(ArrayList)</a></li>
 <li><a href="#listCollection()" tabindex="0">listCollection()</a></li>
 <li><a href="#parseIndex(java.lang.String)" tabindex="0">parseIndex(String)</a></li>
+<li><a href="#parseElementCount(java.lang.String)" tabindex="0">parseElementCount(String)</a></li>
 <li><a href="#printItem(java.util.ArrayList)" tabindex="0">printItem(ArrayList)</a></li>
 <li><a href="#addElementToItem(int,java.util.ArrayList)" tabindex="0">addElementToItem(int, ArrayList)</a></li>
+<li><a href="#removeElement(int,int)" tabindex="0">removeElement(int, int)</a></li>
 </ol>
 </li>
 </ol>
@@ -200,19 +202,30 @@ Application follows a Read-Evaluate-Print-Loop (REPL) pattern</div>
 <div class="block">Prints a given ArrayList of strings.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Integer.html" title="class in java.lang" class="external-link">Integer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseIndex(java.lang.String)" class="member-name-link">parseIndex</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;potentialIndex)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseElementCount(java.lang.String)" class="member-name-link">parseElementCount</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;potentialCount)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Validates that the user has inputted a valid element count</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Integer.html" title="class in java.lang" class="external-link">Integer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseIndex(java.lang.String)" class="member-name-link">parseIndex</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;potentialIndex)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Validates that the user has inputted a valid index</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#printItem(java.util.ArrayList)" class="member-name-link">printItem</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/ArrayList.html" title="class in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;&nbsp;collectionItem)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#printItem(java.util.ArrayList)" class="member-name-link">printItem</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/ArrayList.html" title="class in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;&nbsp;collectionItem)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Prints the contents of a collection</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="User.mainCommand.html" title="enum class in net.qwfp.sofia.cisc3130.assn1">User.mainCommand</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readCommand(java.lang.String)" class="member-name-link">readCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;userInput)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="User.mainCommand.html" title="enum class in net.qwfp.sofia.cisc3130.assn1">User.mainCommand</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readCommand(java.lang.String)" class="member-name-link">readCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;userInput)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads in unsanitized user input and returns the user's expected command</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/ArrayList.html" title="class in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeElement(int,int)" class="member-name-link">removeElement</a><wbr>(int&nbsp;itemIndex,
+ int&nbsp;numberOfElementsToRemove)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove and output a specified number of elements from a specified instantiation of data structure</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#REPL()" class="member-name-link">REPL</a>()</code></div>
@@ -381,6 +394,21 @@ Meant to be used with listCollection()</div>
 </section>
 </li>
 <li>
+<section class="detail" id="parseElementCount(java.lang.String)">
+<h3>parseElementCount</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Integer.html" title="class in java.lang" class="external-link">Integer</a></span>&nbsp;<span class="element-name">parseElementCount</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;potentialCount)</span></div>
+<div class="block">Validates that the user has inputted a valid element count</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>potentialCount</code> - a string containing a non-negative integer</dd>
+<dt>Returns:</dt>
+<dd>the count if a valid non-negative integer is inputted, otherwise null</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="printItem(java.util.ArrayList)">
 <h3>printItem</h3>
 <div class="horizontal-scroll">
@@ -406,6 +434,23 @@ Meant to be used with listCollection()</div>
 <dt>Parameters:</dt>
 <dd><code>itemIndex</code> - the index of the item that will have data added</dd>
 <dd><code>inputElements</code> - the data to be added to</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeElement(int,int)">
+<h3>removeElement</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/ArrayList.html" title="class in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">removeElement</span><wbr><span class="parameters">(int&nbsp;itemIndex,
+ int&nbsp;numberOfElementsToRemove)</span></div>
+<div class="block">Remove and output a specified number of elements from a specified instantiation of data structure</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>itemIndex</code> - the index of the data structure containing elements to remove</dd>
+<dd><code>numberOfElementsToRemove</code> - the number of elements in the data structure to remove</dd>
+<dt>Returns:</dt>
+<dd>the removed elements in a list</dd>
 </dl>
 </div>
 </section>

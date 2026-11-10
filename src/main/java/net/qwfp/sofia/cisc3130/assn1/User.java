@@ -24,6 +24,7 @@ public class User {
         "- list" +System.lineSeparator()+
         "- remove <item index>" +System.lineSeparator()+
         "- addData <item index> <comma-separated collection of items>:" +System.lineSeparator()+
+        "- removedata <item index> <number of items to remove>:" +System.lineSeparator()+
         "- print <item index>" +System.lineSeparator()+
         "- exit" + System.lineSeparator();
 
@@ -36,7 +37,7 @@ public class User {
         String output;
         collection = new ArrayList<>();
 
-        while (!input.contains(mainCommand.EXIT.toString())) {
+        while (readCommand(input.split("\\s+")[0]) != mainCommand.EXIT) {
             output = "";
             // Read
             input = IO.readln(
@@ -68,7 +69,7 @@ public class User {
                     if (commandParts.length < 2) {
                         break;
                     }
-                    Integer indexToRemove = parseInteger(commandParts[1]);
+                    Integer indexToRemove = parseIndex(commandParts[1]);
                     if (indexToRemove != null) {
                         collection.remove(indexToRemove.intValue()); // this one was a pain to debug
                     }
@@ -77,19 +78,35 @@ public class User {
                     if (commandParts.length < 3) {
                         break;
                     }
-                    Integer indexToAddTo = parseInteger(commandParts[1]);
+                    Integer indexToAddTo = parseIndex(commandParts[1]);
                     if (indexToAddTo == null) {
                         break;
                     }
                     ArrayList<String> inputElements = itemStringToArrayList(commandParts[2]);
                     addElementToItem(indexToAddTo, inputElements);
                 }
+                case mainCommand.REMOVEDATA -> {
+                    if (commandParts.length < 3) {
+                        break;
+                    }
+                    Integer indexToRemoveFrom = parseIndex(commandParts[1]);
+                    Integer numberOfElementsToRemove = parseElementCount(commandParts[2]);
+                    if (indexToRemoveFrom == null || numberOfElementsToRemove == null) {
+                        output = "invalid index or count";
+                        break;
+                    }
+
+                    ArrayList<String> removedElements = removeElement(indexToRemoveFrom,numberOfElementsToRemove);
+                    for (String element: removedElements) {
+                        IO.println(element);
+                    }
+                }
                 case mainCommand.LIST -> listItems(listCollection());
                 case mainCommand.PRINT -> {
                     if (commandParts.length < 2) {
                         break;
                     }
-                    Integer indexToPrint = parseInteger(commandParts[1]);
+                    Integer indexToPrint = parseIndex(commandParts[1]);
                     if (indexToPrint != null && !collection.get(indexToPrint).isEmpty()) {
                         output = printItem(collection.get(indexToPrint));
                     }
@@ -158,25 +175,12 @@ public class User {
      * @return the command the user intends
      */
     private mainCommand readCommand(String userInput) {
-        if (userInput.contains(mainCommand.EXIT.toString())) {
-            return mainCommand.EXIT;
+        for (mainCommand command : mainCommand.values()) {
+            if (command.toString().equalsIgnoreCase(userInput)) {
+                return command;
+            }
         }
-        else if (userInput.contains(mainCommand.ADDDATA.toString())) {
-            return mainCommand.ADDDATA;
-        }
-        else if (userInput.contains(mainCommand.ADD.toString())) {
-            return mainCommand.ADD;
-        }
-        else if (userInput.contains(mainCommand.REMOVE.toString())) {
-            return mainCommand.REMOVE;
-        }
-        else if (userInput.contains(mainCommand.LIST.toString())) {
-            return mainCommand.LIST;
-        }
-        else if (userInput.contains(mainCommand.PRINT.toString())) {
-            return mainCommand.PRINT;
-        }
-        return  mainCommand.HELP;
+        return mainCommand.HELP;
     }
 
     /**
@@ -252,25 +256,42 @@ public class User {
 
     /**
      * Validates that the user has inputted a valid index
-     * @param potentialInteger a string containing a valid index to an item in the collection
+     * @param potentialIndex a string containing a valid index to an item in the collection
      * @return a validated index if a valid integer is inputted, otherwise null
      */
-    private Integer parseInteger(String potentialInteger) {
-        int returnInteger;
+    private Integer parseIndex(String potentialIndex) {
+        int returnIndex;
         // Validate that the inputted index represents an integer
         // Return null
         try {
-            returnInteger = Integer.parseInt(potentialInteger);
+            returnIndex = Integer.parseInt(potentialIndex);
         } catch (NumberFormatException e) {
             return null;
         }
 
         // return null for invalid index numbers
-        if (returnInteger < 0 || returnInteger >= collection.size()) {
+        if (returnIndex < 0 || returnIndex >= collection.size()) {
             return null;
         }
 
-        return returnInteger;
+        return returnIndex;
+    }
+
+    /**
+     * Validates that the user has inputted a valid element count
+     * @param potentialCount a string containing a non-negative integer
+     * @return the count if a valid non-negative integer is inputted, otherwise null
+     */
+    private Integer parseElementCount(String potentialCount) {
+        try {
+            int count = Integer.parseInt(potentialCount);
+            if (count < 0) {
+                return null;
+            }
+            return count;
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 
     /**
@@ -306,5 +327,30 @@ public class User {
         for (String inputElement : inputElements) {
             collection.get(itemIndex).add(inputElement);
         }
+    }
+
+    /**
+     * Remove and output a specified number of elements from a specified instantiation of data structure
+     * @param itemIndex the index of the data structure containing elements to remove
+     * @param numberOfElementsToRemove the number of elements in the data structure to remove
+     * @return the removed elements in a list
+     */
+    private ArrayList<String> removeElement(int itemIndex, int numberOfElementsToRemove) {
+        ArrayList<String> removedElements = new ArrayList<>();
+
+        for (
+                int removedElementCount = 0;
+                removedElementCount < numberOfElementsToRemove && !collection.get(itemIndex).isEmpty();
+                removedElementCount++
+        ) {
+            if (collection.get(itemIndex) instanceof Stack<String>)
+                removedElements.add(((Stack<String>) collection.get(itemIndex)).pop());
+            else if (collection.get(itemIndex) instanceof Queue<String>)
+                removedElements.add(((Queue<String>) collection.get(itemIndex)).remove());
+            else if (collection.get(itemIndex) instanceof Deque<String>)
+                removedElements.add(((Deque<String>) collection.get(itemIndex)).remove());
+        }
+
+        return removedElements;
     }
 }
