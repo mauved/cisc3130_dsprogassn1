@@ -68,7 +68,7 @@ public class User {
                     if (commandParts.length < 2) {
                         break;
                     }
-                    Integer indexToRemove = parseIndex(commandParts[1]);
+                    Integer indexToRemove = parseInteger(commandParts[1]);
                     if (indexToRemove != null) {
                         collection.remove(indexToRemove.intValue()); // this one was a pain to debug
                     }
@@ -77,7 +77,7 @@ public class User {
                     if (commandParts.length < 3) {
                         break;
                     }
-                    Integer indexToAddTo = parseIndex(commandParts[1]);
+                    Integer indexToAddTo = parseInteger(commandParts[1]);
                     ArrayList<String> inputElements = itemStringToArrayList(commandParts[2]);
                     addElementToItem(indexToAddTo, inputElements);
                 }
@@ -86,7 +86,7 @@ public class User {
                     if (commandParts.length < 2) {
                         break;
                     }
-                    Integer indexToPrint = parseIndex(commandParts[1]);
+                    Integer indexToPrint = parseInteger(commandParts[1]);
                     if (indexToPrint != null) {
                         output = printItem(collection.get(indexToPrint));
                     }
@@ -249,25 +249,25 @@ public class User {
 
     /**
      * Validates that the user has inputted a valid index
-     * @param potentialIndex a string containing a valid index to an item in the collection
+     * @param potentialInteger a string containing a valid index to an item in the collection
      * @return a validated index if a valid integer is inputted, otherwise null
      */
-    private Integer parseIndex(String potentialIndex) {
-        int returnIndex;
+    private Integer parseInteger(String potentialInteger) {
+        int returnInteger;
         // Validate that the inputted index represents an integer
         // Return null
         try {
-            returnIndex = Integer.parseInt(potentialIndex);
+            returnInteger = Integer.parseInt(potentialInteger);
         } catch (NumberFormatException e) {
             return null;
         }
 
         // return null for invalid index numbers
-        if (returnIndex < 0 || returnIndex > collection.size()) {
+        if (returnInteger < 0 || returnInteger > collection.size()) {
             return null;
         }
 
-        return returnIndex;
+        return returnInteger;
     }
 
     /**
